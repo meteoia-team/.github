@@ -1,0 +1,26 @@
+name: MIA persona
+
+# Thin caller for the shared installer. Adopt from Actions → New workflow, or copy
+# this file into .github/workflows/ of the repository.
+#
+# Change `persona` and `ref` below; everything else is maintained centrally in
+# meteoia-team/mia_skills.
+
+on:
+  workflow_dispatch:
+    inputs:
+      persona:
+        description: Persona to install
+        type: choice
+        options: [ml-engineer, data-scientist, risk-analyst]
+        required: true
+  schedule:
+    - cron: "0 6 * * 1" # weekly drift check; remove if the repository pins by hand
+
+jobs:
+  install:
+    uses: meteoia-team/mia_skills/.github/workflows/install-persona.yml@v1
+    secrets: inherit
+    with:
+      persona: ml-engineer
+      ref: v1.0.0

@@ -1,0 +1,6 @@
+{
+  "name": "MIA persona (skills + knowledge)",
+  "description": "Installs a MIA persona: skills in .agents/skills, the knowledge bundle in .agents/knowledge, and the persona block in AGENTS.md. Opens a pull request.",
+  "categories": ["Python", "AI"],
+  "filePatterns": ["^pyproject\\.toml$", "^requirements.*\\.txt$", "^environment.*\\.ya?ml$"]
+}
